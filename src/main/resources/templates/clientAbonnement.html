@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-0">
+  <div  class="card">
+    <div class="card-header">Abonnement list</div>
+    <div class="card-body">
+
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Montant</th>
+          <th>Solde</th>
+          <th>Type</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="p:${clientAbonnements}">
+          <td th:text="${p.getMontant()}"></td>
+          <td th:text="${p.getSold()}"></td>
+          <td th:text="${p.getType()}"></td>
+          <td>
+            <button class="btn btn-info" >Edite</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <a class="btn btn-danger" href="/" >Exit</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
